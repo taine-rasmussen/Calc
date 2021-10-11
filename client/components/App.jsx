@@ -28,9 +28,8 @@ function App () {
             <button>−</button>
             <button>AC</button>
             <button>Del</button>
-
           </div>
-
+		  
           <div className="digits">
             {createDigits()}
             <button>.</button>
