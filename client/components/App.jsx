@@ -8,7 +8,7 @@ function App () {
   const createDigits = () => {
     const digits = []
     for (let i = 0; i < 10; i++) {
-      digits.push(<button>{i}</button>)
+      digits.push(<button key={i}>{i}</button>)
     }
     return digits
   } 
@@ -26,13 +26,15 @@ function App () {
             <button>×</button>
             <button>+</button>
             <button>−</button>
-            <button>Delete</button>
+            <button>AC</button>
+            <button>Del</button>
+
           </div>
 
           <div className="digits">
             {createDigits()}
             <button>.</button>
-            <button>=</button>
+            <button className='equals-bg-colour'>=</button>
           </div>
         </div>
       </div>
