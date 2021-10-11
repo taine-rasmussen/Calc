@@ -1,3 +1,12 @@
-body {
+:root {
+  --primary: #d81e5b;
+  --secondary: #8c38ff;
+  --light: #eee;
+  --dark: #131a26;
+}
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
