@@ -1,20 +1,20 @@
 import React from 'react'
 
 
+
 function App () {
 
   // Creates numbered btns on calc
   const createDigits = () => {
     const digits = []
-
     for (let i = 0; i < 10; i++) {
-      digits.push(<button>{i}</button>)
+      digits.push(<button key={i}>{i}</button>)
     }
     return digits
   } 
 
   return (
-    <>
+    <>  
       <div className='app'>
         <div className="calculator">
           <div className="display">
@@ -22,17 +22,18 @@ function App () {
           </div>
 
           <div className="operators">
-            <button>/</button>
-            <button>*</button>
+            <button>÷</button>
+            <button>×</button>
             <button>+</button>
-            <button>-</button>
-            <button>Delete</button>
+            <button>−</button>
+            <button>AC</button>
+            <button>Del</button>
           </div>
-
+		  
           <div className="digits">
             {createDigits()}
             <button>.</button>
-            <button>=</button>
+            <button className='equals-bg-colour'>=</button>
           </div>
         </div>
       </div>
