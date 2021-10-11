@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 function App () {
 
   // Creates numbered btns on calc
@@ -21,10 +22,10 @@ function App () {
           </div>
 
           <div className="operators">
-            <button>/</button>
-            <button>*</button>
+            <button>÷</button>
+            <button>×</button>
             <button>+</button>
-            <button>-</button>
+            <button>−</button>
             <button>Delete</button>
           </div>
 
