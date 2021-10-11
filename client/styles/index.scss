@@ -60,7 +60,13 @@ button:hover {
 }
 
 .operators {
+  display: flex;
+}
+
+.operators button {
   background-color: var(--primary);
+  font-weight: 700;
+  flex: 1 1 0%;
 }
 
 .digits {
