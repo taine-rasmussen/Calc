@@ -3,6 +3,16 @@ import React from 'react'
 
 function App () {
 
+  // Creates numbered btns on calc
+  const createDigits = () => {
+    const digits = []
+
+    for (let i = 0; i < 10; i++) {
+      digits.push(<button>{i}</button>)
+    }
+    return digits
+  } 
+
   return (
     <>
       <div className='app'>
@@ -16,8 +26,13 @@ function App () {
             <button>*</button>
             <button>+</button>
             <button>-</button>
-
             <button>Delete</button>
+          </div>
+
+          <div className="digits">
+            {createDigits()}
+            <button>.</button>
+            <button>=</button>
           </div>
         </div>
       </div>
