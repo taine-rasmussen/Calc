@@ -31,11 +31,11 @@ function App () {
           </div>
 
           <div className="operators">
-            <button>÷</button>
-            <button>×</button>
-            <button>+</button>
-            <button>−</button>
-            <button>AC</button>
+            <button onClick={() => updateCalc('/')}>÷</button>
+            <button onClick={() => updateCalc('*')}>×</button>
+            <button onClick={() => updateCalc('+')}>+</button>
+            <button onClick={() => updateCalc('-')}>−</button>
+            <button onClick={() => setCalc('')}>AC</button>
             <button>Del</button>
           </div>
 
