@@ -15,7 +15,7 @@ function App () {
     return digits;
   } 
 
-
+  // Updates calc state with value of digit clicked
   const updateCalc = (value) => {
 	  setCalc(calc + value);
   }
@@ -26,7 +26,8 @@ function App () {
       <div className='app'>
         <div className="calculator">
           <div className="display">
-            <span>(0)</span> {calc || '0'}
+			{calc ? <span>({calc})</span> : null}
+			{calc || '0'}
           </div>
 
           <div className="operators">
