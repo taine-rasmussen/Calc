@@ -6,17 +6,27 @@ function App () {
 	const [calc, setCalc] = useState('')
 	const [result, setResult] = useState('')
 
+	const ops = ['/', '*', '+', '-', '.'];
+
   // Creates numbered btns on calc
   const createDigits = () => {
     const digits = [];
     for (let i = 0; i < 10; i++) {
-      digits.push(<button onClick={() => updateCalc(i)} key={i}>{i}</button>)
+      digits.push(<button 
+		onClick={() => updateCalc(i.toString())} 
+		key={i}>{i}</button>)
     }
     return digits;
   } 
 
   // Updates calc state with value of digit clicked
   const updateCalc = (value) => {
+	if (
+		ops.includes(value) && calc === '' || 
+		ops.includes(value) && ops.includes(calc.slice(-1))
+	){
+		return null;
+	}
 	  setCalc(calc + value);
   }
 
@@ -41,7 +51,7 @@ function App () {
 
           <div className="digits">
             {createDigits()}
-            <button>.</button>
+            <button onClick={() => updateCalc('.')}>.</button>
             <button className='equals-bg-colour'>=</button>
           </div>
         </div>
