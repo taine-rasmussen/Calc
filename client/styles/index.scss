@@ -1,6 +1,5 @@
 :root {
   --primary: #d81e5b;
-  --secondary: #8c38ff;
   --light: #eee;
   --dark: #131a26;
 }
@@ -42,7 +41,8 @@ body {
 
 .display span {
   color: #888;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  margin-right: 10px;
 }
 
 button {
