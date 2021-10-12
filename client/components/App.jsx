@@ -38,10 +38,20 @@ function App () {
 	  }
   }
 
+  	// updates calc with value of current answer
   	const calculate = () => {
 		  setCalc(eval(calc.toString()));
 	  }
+	
+	// Removes last value from calc
+	const deleteBtn = () => {
+		if (calc === ''){
+			return null;
+		} 
 
+		const value = calc.slice(0, -1);
+		setCalc(value);
+	}
 
   return (
     <>  
@@ -58,7 +68,7 @@ function App () {
             <button onClick={() => updateCalc('+')}>+</button>
             <button onClick={() => updateCalc('-')}>−</button>
             <button onClick={() => setCalc('')}>AC</button>
-            <button>Del</button>
+            <button onClick={deleteBtn}>Del</button>
           </div>
 
           <div className="digits">
