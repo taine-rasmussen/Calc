@@ -19,24 +19,46 @@ function App () {
     return digits;
   } 
 
-  // Updates calc state with value of digit clicked
+  // Updates calc display
   const updateCalc = (value) => {
-	if (
-		ops.includes(value) && calc === '' || 
-		ops.includes(value) && ops.includes(calc.slice(-1))
-	){
-		return null;
-	}
-	  setCalc(calc + value);
+
+	// Handles oporators being used twice in a row or as first input
+		if (
+			ops.includes(value) && calc === '' || 
+			ops.includes(value) && ops.includes(calc.slice(-1))
+		){
+			return null;
+		}
+	// Updates calc by adding it with current value
+		setCalc(calc + value);
+
+	// combines previous input and current value with oporator between them
+	  if (!ops.includes(value)){
+		  setResult(eval(calc + value.toString()));
+	  }
   }
 
+  	// updates calc with value of current answer
+  	const calculate = () => {
+		  setCalc(eval(calc.toString()));
+	  }
+	
+	// Removes last value from calc
+	const deleteBtn = () => {
+		if (calc === ''){
+			return null;
+		} 
+
+		const value = calc.slice(0, -1);
+		setCalc(value);
+	}
 
   return (
     <>  
       <div className='app'>
         <div className="calculator">
           <div className="display">
-			{calc ? <span>({calc})</span> : null}
+			{calc ? <span>({result})</span> : null}
 			{calc || '0'}
           </div>
 
@@ -46,13 +68,13 @@ function App () {
             <button onClick={() => updateCalc('+')}>+</button>
             <button onClick={() => updateCalc('-')}>−</button>
             <button onClick={() => setCalc('')}>AC</button>
-            <button>Del</button>
+            <button onClick={deleteBtn}>Del</button>
           </div>
 
           <div className="digits">
             {createDigits()}
             <button onClick={() => updateCalc('.')}>.</button>
-            <button className='equals-bg-colour'>=</button>
+            <button onClick={calculate} className='equals-bg-colour'>=</button>
           </div>
         </div>
       </div>
